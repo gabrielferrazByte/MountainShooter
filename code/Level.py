@@ -57,7 +57,7 @@ class Level:
                     choice = random.choice(('Enemy1', 'Enemy2'))
                     self.entity_list.append(EntityFactory.get_entity('Enemy1'))
                 if event.type == EVENT_TIMEOUT:
-                    self.timeout += TIMEOUT_STEP
+                    self.timeout -= TIMEOUT_STEP
                     if self.timeout == 0:
                         for ent in self.entity_list:
                             if isinstance(ent, Player) and ent.name == 'Player1':
